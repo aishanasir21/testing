@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>GrapsTech Dubai | Maintenance & Construction Services Provider</title>
+    <meta name="description"
+        content="Professional maintenance, construction, and repair services in Dubai. Air-conditioning, plumbing, tiling, painting, and all building maintenance solutions.">
+    <meta name="keywords"
+        content="maintenance dubai, construction services, repair services uae, air conditioning dubai, plumbing services, tiling works, painting contracting">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="GrapsTech | Maintenance & Construction Services Dubai">
+    <meta property="og:description"
+        content="Professional maintenance and construction services in Dubai. Contact us for all your building needs.">
+    <meta property="og:image" content="https://www.grapstech.com/assets/logo.png">
+    <!-- Change to your actual logo path -->
+    <meta property="og:url" content="https://www.grapstech.com">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <!-- ========== LOADING SCREEN ========== -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-progress" id="loadingProgress"></div>
+        <div class="loading-content">
+            <div class="loading-line will-change" id="loadingLine1">Providing <span
+                    class="loading-italic">Reliable</span>
+                Indoor </div>
+            <div class="loading-line will-change" id="loadingLine2">And <span class="loading-italic"> Outdoor
+                </span>Maintenance Services.</div>
+        </div>
+        <div class="loading-bottom will-change" id="loadingBottom">GrapsTech</div>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <div class="main-content" id="mainContent" id="home">
+        <div class="mc2">
+            <!-- Top Navigation -->
+            <div class="topbar" id="topbar">
+                <div class="top-left">Construction & Maintenance Service Provider</div>
+                <div class="logo" id="logo">GrapsTech</div>
+                <div class="top-right">
+                    <div class="top-right">
+                        <a href="https://www.instagram.com/grapstech/" class="instagram desktop-instagram"
+                            target="_blank" rel="noopener noreferrer" id="instagramLink">
+                            <span>Instagram</span>
+                            <span>↗</span>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Featured work label -->
+            <!-- <div class="featured-label" id="featuredLabel">(FEATURED WORK)</div> -->
+
+            <!-- Hero Section -->
+            <section class="hero">
+                <div class="hero-inner">
+                    <h1 class="headline will-change" id="headlineLine1">Building <span class="italic"
+                            id="italic-">Spaces That -
+                            Inspire</span></h1>
+                    <h1 class="headline will-change" id="headlineLine2">Reliable Services You Can Trust.</h1>
+                </div>
+            </section>
+            <section class="hero2">
+                <!-- Bottom Text Section - EXACTLY like screenshot -->
+                <div class="bottom-text-section">
+                    <div class="bottom-text-left will-change" id="bottomTextLeft">
+                        <h2 class="bottom-heading">Offering reliable Maintenance Services.</h2>
+                    </div>
+                    <div class="bottom-text-right will-change" id="bottomTextRight">
+                        <h3 class="bottom-subheading">( featured )</h3>
+                    </div>
+                </div>
+        </div>
+        <div class="video-container video-left will-change" id="videoLeft">
+
+            <video src="/assets/heroimg1.mp4" autoplay muted loop playsinline></video>
+
+            <!-- Placeholder and overlays go HERE, outside the video -->
+            <div class="video-placeholder">
+                <div class="noise-effect"></div>
+                <!-- Original bottom text -->
+                <div class="video-overlay">
+                    <!-- Bottom overlay content -->
+                </div>
+                <!-- Centered hover text -->
+                <div class="video-centered-overlay">
+                    <div class="video-centered-title">Grass Work</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="video-container video-right will-change" id="videoRight">
+            <!-- Video element -->
+            <video src="/assets/heroimg2.mp4" autoplay muted loop playsinline></video>
+
+            <!-- Placeholder and overlays -->
+            <div class="video-placeholder">
+                <div class="noise-effect"></div>
+                <!-- Original bottom text -->
+                <div class="video-overlay">
+                    <!-- Add your bottom text content here if needed -->
+                </div>
+                <!-- Centered hover text -->
+                <div class="video-centered-overlay">
+                    <div class="video-centered-title">Commercial Project</div>
+                </div>
+            </div>
+        </div>
+        <!-- UI Elements -->
+
+
+        <button class="inquiry-btn" id="fixedInquiryBtn">
+            <span class="btn-text">Send Inquiry</span>
+            <svg class="arrow-icon" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M0 12.0593L7.504 4.60687L1.00002 4.51248V2.5H11V12.5624H9L8.93581 6.04761L1.4318 13.5L0 12.0593Z"
+                    fill="currentColor"></path>
+            </svg>
+        </button>
+
+
+        <div class="center-pill will-change" id="centerPill">
+            <a class="active" href="#mainContent">HOME</a>
+            <a href="/html/about.html">ABOUT</a>
+            <a href="/html/prjct.html">PROJECTS</a>
+            <a href="/html/services.html">SERVICES</a>
+
+
+        </div>
+
+        <div class="circle-arrow will-change" id="circleArrow">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+    </div>
+    <section>
+        <!-- ========== ABOUT SECTION - ADDED TO MATCH YOUR SITE ========== -->
+
+        <section class="about" id="about">
+            <div class="bk-about-section">
+                <div class="bk-about-top">More Than Just Maintenance</div>
+                <div class="bk-about-line"></div>
+
+                <div class="bk-about-heading">
+                    At GrapsTech, we believe excellent service is not just about fixing problems —
+                    it's about <em id="em1">providing reliable</em> <em> solutions, ensuring safety, and enhancing
+                        spaces</em>
+                    that last and satisfy our clients.
+                </div>
+
+                <div class="bk-about-grid">
+
+                    <!-- LEFT IMAGE -->
+                    <div class="bk-about-img">
+                        <img src="/assets/outdoor kitchen.jpeg" alt="GrapsTech Services">
+                    </div>
+
+                    <!-- RIGHT TEXT -->
+                    <div class="bk-about-text">
+                        GrapsTech is a trusted provider of comprehensive maintenance services in Dubai, specializing in
+                        construction,
+                        electrical, plumbing, AC, and interior solutions.
+                        Our mission is simple ' deliver fast, reliable, and high-quality services that make every space
+                        functional
+                        and
+                        safe. '
+                        <br><br>
+                        With a skilled team of technicians, engineers, and designers, we turn maintenance challenges
+                        into seamless
+                        solutions.
+                        <br><br>
+                        From minor repairs to complete project support, GrapsTech ensures every job is handled with
+                        precision and
+                        care.
+                    </div>
+                </div>
+        </section>
+
+
+
+        <section class="horizontal-portfolio-section" id="work">
+            <div class="project">
+
+                <video src="/assets/video.mp4" autoplay muted loop playsinline></video>
+
+                <!-- TITLES -->
+                <div class="top-text left">Private Garden</div>
+                <div class="top-text center">Residential & Commercial Projects</div>
+                <div class="top-text right">(2023)</div>
+
+            </div>
+        </section>
+
+
+
+        <!-- ========== SERVICES SECTION ========== -->
+        <section class="services-section-light" id="services">
+            <div class="services-container-light">
+                <!-- Section Header - EXACTLY like About Section -->
+                <div class="services-header-light">
+                    <div class="bk-about-top-light">More Than Just Introduction</div>
+                    <div class="bk-about-line-light"></div>
+
+                    <div class="bk-about-heading-light" id="animated-heading">
+                        <span class="word-light">We</span>
+                        <span class="word-light">deliver</span>
+                        <span class="word-light">complete</span>
+                        <span class="word-light italic-word-light"><em>maintenance</em></span>
+                        <span class="word-light">and</span>
+                        <span class="word-light italic-word-light"><em>construction</em></span>
+                        <span class="word-light">solutions</span>
+                        <span class="word-light">designed</span>
+                        <span class="word-light">to</span>
+                        <span class="word-light">ensure</span>
+                        <span class="word-light italic-word-light"><em>safety,</em></span>
+                        <span class="word-light italic-word-light"><em>reliability,</em></span>
+                        <span class="word-light">and</span>
+                        <span class="word-light italic-word-light"><em>long-lasting</em></span>
+                        <span class="word-light">performance</span>
+                        <span class="word-light">for</span>
+                        <span class="word-light">every</span>
+                        <span class="word-light">project.</span>
+                    </div>
+
+
+                </div>
+
+                <!-- Service 1: Design Consultation -->
+                <div class="service-row-light">
+                    <div class="service-left-light">
+                        <img src="/assets/WhatsApp Image 2025-12-28 at 17.54.03 copy.jpeg" alt="Design Consultation" />
+                    </div>
+
+                    <div class="service-center-light">
+                        <h2>Design<br>Consultation</h2>
+                        <a href="#" class="btn-more-light">MORE <span>⇒</span></a>
+                    </div>
+
+                    <div class="service-right-light">
+                        <p>
+                            They help quickly validate existing ideas for developing green spaces or
+                            serve as a starting point for creating well-matched, thoughtful design
+                            solutions tailored to the specific needs of the site.
+                        </p>
+                        <img src="/assets/WhatsApp Image 2025-12-28 at 17.54.04.jpeg" class="small-img-light" alt="">
+                    </div>
+                </div>
+
+                <!-- Green HR Line -->
+                <div class="service-divider-light"></div>
+
+                <div class="service-row-light">
+                    <div class="service-left-light">
+                        <img src="/assets/int.jpeg" alt="Garden Planning" />
+                    </div>
+
+                    <div class="service-center-light">
+                        <h2>Interior Fit-Out<br> & Finishing</h2>
+                        <a href="#" class="btn-more-light">MORE <span>⇒</span></a>
+                    </div>
+
+                    <div class="service-right-light">
+                        <p>
+                            Expert execution of floor and wall tiling, painting, carpentry,
+                            flooring, partitions, false ceilings, plaster, cladding,
+                            and insulation works with precision and quality craftsmanship.
+                        </p>
+                        <img src="/assets/int2.jpeg" class="small-img-light"
+                            alt="">
+                    </div>
+                </div>
+
+                <!-- Green HR Line -->
+                <div class="service-divider-light"></div>
+
+                <div class="service-row-light">
+                    <div class="service-left-light">
+                        <img src="/assets/air2.jpeg" alt="Landscape Installation" />
+                    </div>
+
+                    <div class="service-center-light">
+                        <h2>Air-Conditioning<br> & Ventilation</h2>
+                        <a href="#" class="btn-more-light">MORE <span>⇒</span></a>
+                    </div>
+
+                    <div class="service-right-light">
+                        <p>
+                            Complete installation, servicing, and maintenance of air-conditioning,
+                            ventilation, and air filtration systems to ensure efficient airflow,
+                            energy savings, and indoor comfort for residential and commercial spaces.
+                        </p>
+                        <img src="/assets/air.jpeg" class="small-img-light" alt="">
+                    </div>
+                </div>
+
+                <!-- Green HR Line -->
+                <div class="service-divider-light"></div>
+
+                <!-- Service 4: Maintenance Services -->
+                <div class="service-row-light">
+                    <div class="service-left-light">
+                        <img src="/assets/golf.jpeg" alt="Maintenance Services" />
+                    </div>
+
+                    <div class="service-center-light">
+                        <h2>Maintenance<br>Services</h2>
+                        <a href="#" class="btn-more-light">MORE <span>⇒</span></a>
+                    </div>
+
+                    <div class="service-right-light">
+                        <p>
+                            Ongoing care and maintenance to keep your landscape thriving, including
+                            pruning, fertilizing, pest control, and seasonal cleanup services.
+                        </p>
+                        <img src="/assets/golf2.jpeg" class="small-img-light"
+                            alt="">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========== GARDEN SLIDER SECTION ========== -->
+        <section class="garden-slider-section">
+            <div class="garden-slider-container">
+                <!-- Section Header -->
+                <div class="garden-header">
+                    <div class="garden-subtitle">Our Featured Projects</div>
+                    <div class="garden-divider"></div>
+
+                    <div class="garden-heading">
+                        Transforming spaces into living environments that
+                        <em>inspire, connect, and endure.</em>
+                    </div>
+                </div>
+
+                <!-- Slider Section -->
+                <div class="garden-slider-wrapper">
+                    <!-- Left Image -->
+                    <div class="garden-img-left">
+                        <div class="garden-image-container">
+                            <img src="/images/outdoor kitchen.jpeg" alt="Garden Project" id="sliderLeftImg" />
+                        </div>
+                    </div>
+
+                    <!-- Center Content -->
+                    <div class="garden-content-center">
+                        <div class="slider-controls">
+                            <div class="slide-number" id="slideNumber">01</div>
+                            <div class="slider-arrows">
+                                <button class="slider-arrow prev" id="prevBtn" aria-label="Previous project">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M15 18l-6-6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                                <button class="slider-arrow next" id="nextBtn" aria-label="Next project">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M9 18l6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+
+                        <h2 class="garden-title" id="slideTitle">Private Residential Gardens</h2>
+                        <p class="garden-description" id="slideDesc">
+                            Green spaces designed for individual homes, offering privacy,
+                            beauty, and a personal connection with nature.
+                        </p>
+                    </div>
+
+                    <!-- Right Image -->
+                    <div class="garden-img-right">
+                        <div class="garden-image-container">
+                            <img src="/assets/lightning.jpeg" alt="Garden Detail" id="sliderRightImg" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========== VIDEO OVERLAY SECTION ========== -->
+        <section class="horizontal-portfolio-section">
+            <!-- Blur Overlay -->
+            <div class="blur-overlay"></div>
+
+            <div class="project">
+                <video src="/assets/video.mp4" autoplay muted loop playsinline></video>
+
+                <!-- TITLES -->
+                <div class="top-text left">Private Garden</div>
+                <div class="top-text center">Residential & Commercial Projects</div>
+                <div class="top-text right">(2023)</div>
+            </div>
+        </section>
+
+
+
+
+        <!-- Add this section where you want it in your site -->
+        <section class="process-section-light">
+            <div class="process-container-light">
+                <!-- Header section with your requested heading -->
+                <div class="process-header-light">
+                    <div class="process-top-light">Work Process</div>
+                    <div class="process-divider-light"></div>
+                    <div class="process-heading-light">
+                        <span class="word-light">Simple</span>
+                        <span class="word-light">and</span>
+                        <span class="word-light italic-word-light"><em>Clean</em></span>
+                        <span class="word-light">Work</span>
+                        <span class="word-light">Process</span>
+                    </div>
+                    <div class="process-subheading-light">
+                        Garden design is an exciting journey — and the process, consisting of six key steps, has been
+                        created to
+                        provide you with full support.
+                    </div>
+                </div>
+
+                <div class="process-content-wrapper">
+                    <!-- Left image -->
+                    <div class="process-image-light">
+                        <div class="image-container">
+                            <img src="/assets/Screenshot 2025-12-12 at 11.24.55 PM.png" alt="Garden design process">
+                        </div>
+                    </div>
+
+                    <!-- Right steps -->
+                    <div class="process-steps-light">
+                        <!-- Step 01 -->
+                        <div class="step-row-light">
+                            <div class="step-number-light">(01)</div>
+                            <div class="step-content-light">
+                                <div class="step-title-light">Initial Contact and Needs Assessment</div>
+                                <div class="step-desc-light">
+                                    The client contacts me and I gather basic project info.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-divider-light"></div>
+
+                        <!-- Step 02 -->
+                        <div class="step-row-light">
+                            <div class="step-number-light">(02)</div>
+                            <div class="step-content-light">
+                                <div class="step-title-light">Consultation and Site Survey</div>
+                                <div class="step-desc-light">
+                                    I visit the site and understand expectations deeply.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-divider-light"></div>
+
+                        <!-- Step 03 -->
+                        <div class="step-row-light">
+                            <div class="step-number-light">(03)</div>
+                            <div class="step-content-light">
+                                <div class="step-title-light">Concept Creation</div>
+                                <div class="step-desc-light">
+                                    I prepare initial concepts and refine the chosen version.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-divider-light"></div>
+
+                        <!-- Step 04 -->
+                        <div class="step-row-light">
+                            <div class="step-number-light">(04)</div>
+                            <div class="step-content-light">
+                                <div class="step-title-light">Material Selection</div>
+                                <div class="step-desc-light">
+                                    I create a list of recommended plants and materials.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="step-divider-light"></div>
+
+                        <!-- Step 05 -->
+                        <!-- <div class="step-row-light">
+            <div class="step-number-light">(05)</div>
+            <div class="step-content-light">
+              <div class="step-title-light">Visualizations</div>
+              <div class="step-desc-light">
+                I show 3D previews so clients can clearly visualize the final look.
+              </div>
+            </div>
+          </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="brands-section-light">
+            <div class="brands-container-light">
+                <!-- Header with your site's styling -->
+                <div class="brands-header-light">
+                    <div class="brands-top-light">Brands & Clients</div>
+                    <div class="brands-divider-light"></div>
+                    <div class="brands-heading-light">
+                        <span class="word-brand">Brands</span>
+                        <span class="word-brand">I've</span>
+                        <span class="word-brand italic-word-brand"><em>Worked</em></span>
+                        <span class="word-brand">With</span>
+                    </div>
+                    <div class="brands-subheading-light">
+                        I've had the privilege to collaborate with exceptional brands and clients,
+                        bringing their garden and landscape visions to life.
+                    </div>
+                </div>
+
+                <!-- Brands grid -->
+                <div class="brands-grid-light">
+                    <!-- Row 1 -->
+                    <div class="brand-card-light">
+                        <div class="brand-logo-container">
+                            <!-- Canon logo image -->
+                            <img src="/assets/garden-concept-logo.webp" alt="Garden concept" class="brand-logo-img">
+                        </div>
+                        <!-- <div class="brand-name-light">Garden concept</div> -->
+                    </div>
+
+                    <div class="brand-card-light">
+                        <div class="brand-logo-container">
+                            <!-- Alberta logo image -->
+                            <img src="/assets/Oasis Hills Logo.avif" alt="Oasis Hills" class="brand-logo-img">
+                        </div>
+                        <!-- <div class="brand-name-light">Alberta</div> -->
+                    </div>
+
+                    <div class="brand-card-light">
+                        <div class="brand-logo-container">
+                            <!-- Jeep logo image -->
+                            <img src="/assets/canon logo.png" alt="Canon" class="brand-logo-img">
+                        </div>
+                        <!-- <div class="brand-name-light">Jeep</div> -->
+                    </div>
+
+                    <!-- Row 2 -->
+                    <div class="brand-card-light">
+                        <div class="brand-logo-container">
+                            <!-- Cayuga logo image - replace with actual Cayuga logo -->
+                            <img src="/assets/green valley.png" alt="green valley" class="brand-logo-img">
+                        </div>
+                        <!-- <div class="brand-name-light">Cayuga</div> -->
+                    </div>
+
+                    <div class="brand-card-light">
+                        <div class="brand-logo-container">
+                            <!-- Reebok logo image -->
+                            <img src="/assets/reebook logo.png" alt="Reebok" class="brand-logo-img">
+                        </div>
+                        <!-- <div class="brand-name-light">Reebok</div> -->
+                    </div>
+
+                    <!-- Row 3 -->
+                    <div class="brand-card-light">
+                        <div class="brand-logo-container">
+                            <!-- Burj Al Arab logo image - replace with actual Burj Al Arab logo -->
+                            <img src="/assets/Burj-Al-Arab-logo.webp" alt="Burj Al Arab Green Valley"
+                                class="brand-logo-img">
+                        </div>
+                        <!-- <div class="brand-name-light">Burj Al Arab Green Valley</div> -->
+
+                    </div>
+                </div>
+        </section>
+
+        <!-- Add this section after your services section -->
+
+        <!-- ADD THIS TO YOUR HTML WHERE YOU WANT THE FOOTER -->
+        <section class="footer-section">
+            <!-- LEFT IMAGE WITH ZOOM EFFECT -->
+            <div class="footer-image-wrapper">
+                <div class="footer-image">
+                    <div class="image-zoom-container">
+                        <img src="/assets/footer.jpg" alt="Graps Tech Maintenance Services" class="zoom-image">
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT CONTENT -->
+            <div class="footer-content-wrapper">
+                <div class="footer-content">
+                    <!-- Top section with title and button -->
+                    <div class="footer-top-section">
+                        <p class="footer-title">
+                            Let's Transform <span class="italic-word">Your Space</span> Together
+                        </p>
+
+                        <div class="button-wrapper">
+                            <button class="inquiry-btn" id="footerInquiryBtn">
+                                <span class="btn-text">Send Inquiry</span>
+                                <svg class="arrow-icon" viewBox="0 0 11 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M0 12.0593L7.504 4.60687L1.00002 4.51248V2.5H11V12.5624H9L8.93581 6.04761L1.4318 13.5L0 12.0593Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="title-divider"></div>
+                    </div>
+
+                    <!-- Middle contact section -->
+                    <div class="footer-middle-section">
+                        <div class="contact-info">
+                            <p class="contact-email"><a href="mailto:grapsdxb@gmail.com">grapsdxb@gmail.com</a></p>
+                            <p class="contact-phone"><a href="tel:+971505032497">+971 50 503 2497</a></p>
+                            <p class="contact-address">
+                                P.O Box 113860,<br>
+                                Dubai - U.A.E
+                            </p>
+                        </div>
+
+                        <div class="navigation-section">
+                            <nav class="site-navigation">
+                                <a href="#mainContent" class="nav-link active">
+                                    Home
+                                    <div class="nav-underline"></div>
+                                </a>
+                                <a href="/html/services.html" class="nav-link">
+                                    Services
+                                    <div class="nav-underline"></div>
+                                </a>
+                                <a href="/html/prjct.html" class="nav-link">
+                                    Work
+                                    <div class="nav-underline"></div>
+                                </a>
+                                <a href="/html/about.html" class="nav-link">
+                                    About
+                                    <div class="nav-underline"></div>
+                                </a>
+                            </nav>
+
+
+                        </div>
+                    </div>
+
+                    <!-- Bottom footer section -->
+                    <div class="footer-bottom-section">
+                        <p class="copyright-text">
+                            © 2025 Graps Tech<br>
+                            Designed by <a href="index.html" class="designer-credit">Aisha</a>
+                        </p>
+
+                        <!-- Desktop Instagram link only - HIDDEN on mobile -->
+                        <a href="https://www.instagram.com/grapsdxb/" target="_blank"
+                            class="instagram-link desktop-instagram" id="instagramLink">
+                            <span>Instagram</span>
+                            <svg class="insta-arrow" viewBox="0 0 11 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M0 12.0593L7.504 4.60687L1.00002 4.51248V2.5H11V12.5624H9L8.93581 6.04761L1.4318 13.5L0 12.0593Z"
+                                    fill="var(--bright-green)"></path>
+                            </svg>
+                            <div class="nav-underline"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <script src="/script.js"></script>
+
+
+
+
+</body>
+
+</html>

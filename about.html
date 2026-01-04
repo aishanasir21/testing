@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graps Tech About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables with exact colors from your palette */
+        :root {
+            --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+            --navy-blue: #01327b;
+            --dark-blue: #152856;
+            --dark-blue-trans: #152856bf;
+            --light-grey: #f5f5f5;
+            --light-grey-20: #fffefc33;
+            --light-grey-50: #fffefc80;
+            --light-grey-80: #fffefccc;
+            --black-blue: #03337c;
+            --black-blue-80: #03337ccc;
+            --metallic-orange: #ff6b35d3;
+        }
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            font-family: 'Figtree', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+            overflow-x: hidden;
+            background: var(--dark-blue);
+            color: var(--light-grey);
+            scroll-behavior: smooth;
+        }
+
+       
+
+        /* ======================
+           HERO SECTION - UPDATED STYLE
+        ====================== */
+        .hero {
+            padding: 140px 40px 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            background: #e2e2e2;
+        }
+
+        .top-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 100px;
+            gap: 60px;
+        }
+
+        .main-title {
+            font-family: 'Figtree', sans-serif;
+            font-size: 80px;
+            font-weight: 400;
+            line-height: 0.85;
+            letter-spacing: -0.02em;
+            color: var(--black-blue);
+        }
+
+        .image-box {
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Belief Statement */
+        .belief-statement {
+            text-align: left;
+            margin-bottom: 60px;
+            max-width: 1000px;
+        }
+
+        .belief-statement h2 {
+            font-family: 'Figtree', sans-serif;
+            font-size: 80px;
+            font-weight: 400;
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+                       color: var(--black-blue);
+        }
+
+        /* Sub-navigation */
+        .sub-nav {
+            display: flex;
+            justify-content: flex-start;
+            gap: 60px;
+            border-top: 1px solid var(--light-grey-20);
+            padding-top: 30px;
+            margin-bottom: 60px;
+        }
+
+        .sub-nav a {
+            color: var(--dark-blue-trans);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .sub-nav a:hover {
+            color: var(--light-grey);
+        }
+
+        .sub-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            /* background: var(--light-grey); */
+            transition: width 0.3s ease;
+        }
+
+        .sub-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* ======================
+           PASSION SECTION - UPDATED TO MATCH YOUR STYLE
+        ====================== */
+        .passion-section {
+            width: 100%;
+            padding: 0 40px 120px;
+            font-family: 'Figtree', sans-serif;
+            color: var(--dark-blue);
+            background: #e2e2e2;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
+            align-items: start;
+        }
+
+        .image-container {
+            grid-column: 1 / 10;
+            grid-row: 1;
+            overflow: hidden;
+            height: 500px;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .passion-headline {
+            grid-column: 1 / 8;
+            grid-row: 2;
+            font-family: 'Figtree', sans-serif;
+            font-size: 64px;
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--black-blue);
+            padding: 20px 0 0;
+        }
+
+        .description-text {
+            grid-column: 10 / 13;
+            grid-row: 1 / 3;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: 40px 0 0;
+        }
+
+        .description-text p {
+            font-family: 'Figtree', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--dark-blue);
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* ======================
+           EXPERIENCE SECTION (New - Replacing Team & Partners)
+        ====================== */
+        .experience-section {
+            width: 100%;
+            padding: 120px 40px;
+            background: linear-gradient(to bottom, var(--dark-blue) 0%, var(--navy-blue) 100%);
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .experience-header {
+            border-top: 1px solid var(--light-grey-20);
+            padding-top: 40px;
+            margin-bottom: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .experience-header .label {
+            font-family: 'Figtree', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--light-grey-80);
+            opacity: 0.9;
+        }
+
+        .experience-title {
+            font-family: 'Figtree', sans-serif;
+            font-size: 52px;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            color: var(--light-grey);
+            width: 50%;
+        }
+
+        /* Stats Container - PrimeAsia Style */
+        .stats-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 60px 0;
+            border-top: 1px solid var(--light-grey-20);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .stat-row:last-child {
+            border-bottom: 1px solid var(--light-grey-20);
+        }
+
+        .stat-big {
+            font-family: 'Figtree', sans-serif;
+            font-size: 120px;
+            font-weight: 500;
+            line-height: 1;
+            color: var(--light-grey);
+            letter-spacing: -0.02em;
+        }
+
+        .stat-desc {
+            font-family: 'Figtree', sans-serif;
+            font-size: 22px;
+            line-height: 1.4;
+            color: var(--light-grey-80);
+            max-width: 350px;
+            text-align: right;
+            font-weight: 300;
+        }
+
+        /* Story Section */
+        .story-section {
+            width: 100%;
+            padding: 120px 40px;
+            background: linear-gradient(to bottom, var(--navy-blue) 0%, var(--dark-blue) 100%);
+            position: relative;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .story-header {
+            border-top: 1px solid var(--light-grey-20);
+            padding-top: 40px;
+            margin-bottom: 80px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .story-header .label {
+            font-family: 'Figtree', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: var(--light-grey-80);
+            opacity: 0.9;
+        }
+
+        .story-title {
+            font-family: 'Figtree', sans-serif;
+            font-size: 52px;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--light-grey);
+            width: 50%;
+        }
+
+        .story-content {
+            display: flex;
+            gap: 80px;
+            align-items: flex-start;
+        }
+
+        .story-image-main {
+            flex: 1;
+            height: 600px;
+            overflow: hidden;
+        }
+
+        .story-image-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .story-text-columns {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            padding-top: 40px;
+        }
+
+        .story-text-columns p {
+            font-family: 'Figtree', sans-serif;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--light-grey-80);
+            font-weight: 300;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .story-text-columns p strong {
+            color: var(--light-grey);
+            font-weight: 400;
+        }
+
+        /* ======================
+           IMAGE GRID SECTION - UPDATED STYLE
+        ====================== */
+        .image-grid-section {
+            width: 100%;
+            padding: 0 40px 120px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto;
+            gap: 30px;
+        }
+
+        .grid-item {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s var(--transition-smooth);
+        }
+
+        .grid-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .item-blueprint {
+            grid-column: 9 / 13;
+            grid-row: 1;
+            height: 400px;
+        }
+
+        .item-meeting {
+            grid-column: 6 / 9;
+            grid-row: 2;
+            height: 400px;
+            margin-top: -100px;
+        }
+
+        /* ======================
+           ANIMATIONS AND INTERACTIONS
+        ====================== */
+        .hero, .passion-section, .experience-section, .story-section, .image-grid-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s cubic-bezier(0.215, 0.61, 0.355, 1), 
+                        transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+
+        .hero.visible, .passion-section.visible, .experience-section.visible, 
+        .story-section.visible, .image-grid-section.visible, .stat-row.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Word-by-word animation for headings */
+        .word-animate {
+    display: inline-block;
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    margin-right: 0.25em; /* 👈 THIS creates natural spacing */
+}
+
+
+        .word-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ======================
+           RESPONSIVE DESIGN
+        ====================== */
+        @media (max-width: 1200px) {
+            .main-title {
+                font-size: 90px;
+            }
+            
+            .belief-statement h2 {
+                font-size: 52px;
+            }
+            
+            .passion-headline {
+                font-size: 52px;
+            }
+            
+            .experience-title,
+            .story-title {
+                font-size: 42px;
+            }
+            
+            .stat-big {
+                font-size: 90px;
+            }
+            
+            .stat-desc {
+                font-size: 20px;
+                max-width: 300px;
+            }
+            
+            .story-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .story-text-columns {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero {
+                padding: 120px 30px 60px;
+            }
+            
+            .top-row {
+                flex-direction: column;
+                gap: 40px;
+            }
+            
+            .main-title {
+                font-size: 72px;
+            }
+            
+            .image-box {
+                width: 100%;
+                max-width: 400px;
+                height: 300px;
+            }
+            
+            .belief-statement h2 {
+                font-size: 42px;
+            }
+            
+            .sub-nav {
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+            
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .image-container {
+                grid-column: 1 / -1;
+                grid-row: 1;
+                height: 400px;
+            }
+            
+            .passion-headline {
+                grid-column: 1 / -1;
+                grid-row: 2;
+                font-size: 42px;
+                padding: 0;
+            }
+            
+            .description-text {
+                grid-column: 1 / -1;
+                grid-row: 3;
+                padding: 0;
+            }
+            
+            .experience-section,
+            .story-section {
+                padding: 80px 30px;
+            }
+            
+            .experience-title,
+            .story-title {
+                width: 100%;
+                font-size: 36px;
+            }
+            
+            .experience-header,
+            .story-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .stat-big {
+                font-size: 70px;
+            }
+            
+            .stat-row {
+                flex-direction: column;
+                gap: 20px;
+                padding: 40px 0;
+            }
+            
+            .stat-desc {
+                text-align: left;
+                max-width: 100%;
+            }
+            
+            .story-image-main {
+                height: 400px;
+            }
+            
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                gap: 30px;
+            }
+            
+            .item-blueprint {
+                grid-column: 1 / -1;
+                grid-row: auto;
+                height: 300px;
+            }
+            
+            .item-meeting {
+                grid-column: 1 / -1;
+                grid-row: auto;
+                height: 300px;
+                margin-top: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 20px 30px;
+            }
+            
+            .hero {
+                padding: 100px 20px 40px;
+            }
+            
+            .main-title {
+                font-size: 56px;
+            }
+            
+            .belief-statement h2 {
+                font-size: 32px;
+            }
+            
+            .sub-nav {
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+            
+            .sub-nav a {
+                font-size: 14px;
+            }
+            
+            .passion-section {
+                padding: 0 20px 80px;
+            }
+            
+            .passion-headline {
+                font-size: 36px;
+            }
+            
+            .description-text p {
+                font-size: 16px;
+            }
+            
+            .experience-section,
+            .story-section {
+                padding: 60px 20px;
+            }
+            
+            .experience-title,
+            .story-title {
+                font-size: 32px;
+            }
+            
+            .stat-big {
+                font-size: 60px;
+            }
+            
+            .stat-desc {
+                font-size: 18px;
+            }
+            
+            .story-text-columns p {
+                font-size: 16px;
+            }
+            
+            .image-grid-section {
+                padding: 0 20px 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            
+            .main-title {
+                font-size: 42px;
+            }
+            
+            .belief-statement h2 {
+                font-size: 28px;
+            }
+            
+            .sub-nav {
+                gap: 20px;
+            }
+            
+            .passion-headline {
+                font-size: 28px;
+            }
+            
+            .experience-title,
+            .story-title {
+                font-size: 28px;
+            }
+            
+            .stat-big {
+                font-size: 50px;
+            }
+            
+            .stat-desc {
+                font-size: 16px;
+            }
+            
+            .story-image-main {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <!-- <nav class="navbar">
+        <div class="logo">Graps Tech<span>™</span></div>
+        <div class="menu-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav> -->
+
+    <!-- Hero Section -->
+    <main class="hero">
+        <div class="top-row">
+            <h1 class="main-title">We Build What We<br>Beleive In.</h1>
+            <div class="image-box">
+                <img src="/assets/footer.jpg" alt="Team working at Graps Tech">
+            </div>
+        </div>
+
+        <div class="belief-statement">
+            <h2>About us</h2>
+        </div>
+
+        <div class="sub-nav">
+            <a href="#passion">OUR PASSION</a>
+            <a href="#story">OUR STORY</a>
+            <a href="#experience">OUR EXPERIENCE</a>
+        </div>
+    </main>
+
+    <!-- Passion Section -->
+    <section id="passion" class="passion-section">
+        <div class="content-wrapper">
+            <div class="image-container">
+                <img src="/assets/footer.jpg" alt="Construction planning at Graps Tech">
+            </div>
+
+            <h2 class="passion-headline">
+                At Graps Tech, we're passionate about potential.
+            </h2>
+
+            <div class="description-text">
+                <p>
+                    As a progressive player in real-estate development, we bring 
+                    purpose and vision to ambitious construction projects, 
+                    approaching each with a future-oriented mindset.
+                </p>
+                <p>
+                    From industrial to mixed-use and residential, we build with 
+                    lasting use and continued value in mind. For investors, that 
+                    means profitability on a generational scale. For businesses 
+                    and communities, that means a space to grow and realize 
+                    their full potential.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Story Section -->
+    <section id="story" class="story-section">
+        <div class="story-header">
+            <span class="label">OUR STORY</span>
+            <h2 class="story-title">The passion is built-in</h2>
+        </div>
+
+        <div class="story-content">
+            <div class="story-image-main">
+                <img src="/assets/footer.jpg" alt="Graps Tech Co-founders at work">
+            </div>
+            
+            <div class="story-text-columns">
+                <div class="column">
+                    <p><strong>Graps Tech stands on the strength of partnership.</strong></p>
+                    <p>Coming together for the construction of Immeuble Foliot's Phase 2, Graps Tech Co-Founders David Foliot and Jean-Philip Robitaille discovered a common vision: to build something from the ground up whose value would endure.</p>
+                </div>
+                <div class="column">
+                    <p>From there, they determined to execute that vision on a bigger scale. Today, their shared passion for building, entrepreneurial drive, and dedication to establishing a lasting, positive legacy through development is embodied in Graps Tech's forward-looking, purpose-driven projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Experience Section (New - Replaces Team & Partners) -->
+    <section id="experience" class="experience-section">
+        <div class="experience-header">
+            <span class="label">OUR EXPERIENCE</span>
+            <h2 class="experience-title">Numbers that speak volumes</h2>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-row">
+                <div class="stat-big">15+</div>
+                <div class="stat-desc">Years of Excellence in Real Estate Development</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-big">50+</div>
+                <div class="stat-desc">Successful Projects Completed Across North America</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-big">2.5M+</div>
+                <div class="stat-desc">Square Feet of Commercial & Residential Space Developed</div>
+            </div>
+            <div class="stat-row">
+                <div class="stat-big">Gold</div>
+                <div class="stat-desc">LEED & BOMA Certifications for Sustainable Development</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Grid Section -->
+    <!-- <section class="image-grid-section">
+        <div class="grid-container">
+            <div class="grid-item item-blueprint">
+                <img src="/assets/footer.jpg" alt="Reviewing Blueprints at Graps Tech">
+            </div>
+            <div class="grid-item item-meeting">
+                <img src="/assets/footer.jpg" alt="Team Discussion at Graps Tech">
+            </div>
+        </div>
+    </section> -->
+
+    <script>
+        // Scroll animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.hero, .passion-section, .experience-section, .story-section, .image-grid-section, .stat-row');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+            
+            // Word-by-word animation for headings
+            const headings = document.querySelectorAll('.passion-headline, .experience-title, .story-title');
+            headings.forEach(heading => {
+                const words = heading.textContent.split(' ');
+                heading.innerHTML = '';
+                
+                words.forEach((word, index) => {
+                    const span = document.createElement('span');
+                    span.className = 'word-animate';
+                    span.style.transitionDelay = `${index * 0.1}s`;
+                    span.textContent = word;
+
+                    heading.appendChild(span);
+                });
+                
+                const wordObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const words = entry.target.querySelectorAll('.word-animate');
+                            words.forEach(word => {
+                                word.classList.add('visible');
+                            });
+                        }
+                    });
+                }, { threshold: 0.5 });
+                
+                wordObserver.observe(heading);
+            });
+            
+            // Smooth scroll for navigation
+            document.querySelectorAll('.sub-nav a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Menu toggle
+            document.querySelector('.menu-icon').addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

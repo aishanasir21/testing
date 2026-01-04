@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GrapsTech — Services</title>
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables */
+    :root {
+      --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+      --navy-blue: #01327b;
+      --dark-blue: #152856;
+      --dark-blue-trans: #152856bb;
+      --light-grey: #f5f5f5;
+      --light-grey-20: #fffefc33;
+      --light-grey-50: #fffefc80;
+      --light-grey-80: #fffefccc;
+      --black-blue: #03337c;
+      --black-blue-80: #03337ccc;
+      --metallic-orange: #ff6b35;
+      --cream: #efefef;
+      --off-white: #f8f9fa;
+    }
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Figtree', system-ui, -apple-system, sans-serif;
+      overflow-x: hidden;
+      background: var(--cream);
+      color: var(--dark-blue);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--black-blue);
+    }
+
+    /* ======================
+       HERO SECTION
+    ====================== */
+    .hero-section {
+      background: var(--cream);
+      position: relative;
+      padding: clamp(120px, 10vw, 160px) clamp(24px, 4vw, 48px) clamp(80px, 8vw, 100px);
+      min-height: 40vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-noise {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image:
+        repeating-linear-gradient(0deg,
+          rgba(0, 0, 0, 0.03) 0px,
+          rgba(0, 0, 0, 0.03) 1px,
+          transparent 1px,
+          transparent 2px),
+        repeating-linear-gradient(90deg,
+          rgba(0, 0, 0, 0.02) 0px,
+          rgba(0, 0, 0, 0.02) 1px,
+          transparent 1px,
+          transparent 2px);
+      opacity: 0.2;
+      mix-blend-mode: overlay;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      width: 100%;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .main-heading {
+      font-family: 'Figtree', sans-serif;
+      font-size: clamp(1.5rem, 5vw, 6rem);
+      line-height: 0.92;
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--black-blue);
+      margin-bottom: clamp(2rem, 4vw, 2.5rem);
+      opacity: 0;
+      transform: translateY(60px);
+    }
+
+    .heading-line {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .main-heading .italic {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--black-blue);
+    }
+
+    .hero-subtext {
+      font-family: 'Figtree', sans-serif;
+      font-size: clamp(0.1rem, 1.6vw, 1.4rem);
+      font-weight: 300;
+      line-height: 1.6;
+      color: var(--black-blue-80);
+      max-width: 700px;
+      margin: 0 auto clamp(2rem, 4vw, 3rem);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    /* ======================
+       CONTENT AREA
+    ====================== */
+    .content-area {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 100px clamp(24px, 4vw, 48px) clamp(80px, 10vw, 120px);
+      background: var(--cream);
+    }
+
+    .sub-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 500;
+      margin: 0 0 40px;
+      color: var(--navy-blue);
+    }
+
+    .description-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(30px, 4vw, 40px);
+      margin-bottom: clamp(40px, 6vw, 60px);
+    }
+
+    @media (min-width: 992px) {
+      .description-grid {
+        grid-template-columns: 1fr 450px;
+      }
+    }
+
+ 
+    
+    .text-block p {
+      font-size: clamp(1rem, 1.5vw, 1.125rem);
+      line-height: 1.6;
+      margin-bottom: 24px;
+      color: var(--dark-blue);
+      font-weight: 300;
+    }
+
+    .view-all-btn {
+      background: var(--navy-blue);
+      color: var(--light-grey);
+      border: none;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s var(--transition-smooth);
+      margin-top: 20px;
+    }
+
+    .view-all-btn:hover {
+      background: var(--dark-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(1, 50, 123, 0.2);
+    }
+
+    /* ======================
+       IMAGE GALLERY
+    ====================== */
+    .image-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(20px, 3vw, 30px);
+      margin-bottom: clamp(60px, 8vw, 80px);
+    }
+
+    @media (min-width: 768px) {
+      .image-gallery {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 8px;
+      transition: transform 0.3s var(--transition-smooth);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+      background: linear-gradient(45deg, #e0e0e0, #f0f0f0);
+      border-radius: 8px;
+      transition: transform 0.5s var(--transition-smooth);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.03);
+    }
+
+    .caption {
+      margin-top: 15px;
+      font-size: 14px;
+      color: var(--dark-blue-trans);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* ======================
+       PROCESS ACCORDIONS
+    ====================== */
+    .acc-item {
+      border-bottom: 1px solid rgba(3, 51, 124, 0.15);
+      margin-bottom: 10px;
+    }
+
+    .acc-header {
+      padding: 24px 0;
+      font-size: clamp(14px, 1.5vw, 16px);
+      font-weight: 600;
+      color: #666;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s var(--transition-smooth);
+    }
+
+    .acc-header:hover {
+      color: var(--navy-blue);
+    }
+
+    .acc-item.active .acc-header {
+      color: var(--navy-blue);
+    }
+
+    .acc-content {
+      color: var(--dark-blue-trans);
+      max-height: 0;
+      overflow: hidden;
+      padding-left: 28px;
+      transition: all 0.5s var(--transition-smooth);
+    }
+
+    .acc-item.active .acc-content {
+      max-height: 400px;
+      padding-bottom: 40px;
+    }
+
+    /* ======================
+       NEW TESTIMONIALS SECTION
+    ====================== */
+    .new-testimonials-section {
+      padding: clamp(80px, 8vw, 120px) clamp(24px, 4vw, 48px);
+      background: var(--cream);
+      position: relative;
+      border-top: 1px solid rgba(3, 51, 124, 0.1);
+    }
+
+    .new-testimonials-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .header-grid {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: clamp(60px, 8vw, 120px);
+      gap: clamp(30px, 4vw, 40px);
+    }
+
+    @media (min-width: 768px) {
+      .header-grid {
+        flex-direction: row;
+      }
+    }
+
+    .title {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 500;
+      margin: 0;
+      color: var(--navy-blue);
+      line-height: 1.1;
+    }
+
+    .intro-box {
+      flex: 1;
+  
+    }
+   @media (min-width: 992px) {
+      .intro-box {
+      flex: 1;
+      margin-left: 500px;
+    }
+    }
+    .intro-box p {
+      max-width: 380px;
+      font-size: clamp(1rem, 1.5vw, 1.1rem);
+      line-height: 1.6;
+      color: var(--navy-blue);
+      opacity: 0.8;
+    }
+
+    .scroll-wrapper {
+      display: flex;
+      gap: clamp(40px, 5vw, 80px);
+      overflow-x: auto;
+      cursor: grab;
+      scrollbar-width: none;
+      padding: 20px 10px;
+      margin: 0 -10px;
+    }
+
+    .scroll-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial-item {
+      flex-shrink: 0;
+      width: min(600px, 90vw);
+      background: rgba(226, 226, 226, 0.85);
+      padding: clamp(25px, 4vw, 40px);
+      border-radius: 12px;
+      border: 1px solid rgba(212, 211, 211, 0.3);
+      transition: all 0.3s var(--transition-smooth);
+    }
+
+    .testimonial-item:hover {
+      background: rgba(226, 226, 226, 0.95);
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo-container {
+      height: 40px;
+      margin-bottom: 40px;
+    }
+
+    .logo-container img {
+      height: 100%;
+      filter: grayscale(1) contrast(1.2) brightness(0.9);
+    }
+
+    .quote-text {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.1;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      margin: 0;
+      color: var(--dark-blue-trans);
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: calc(1.1em * 4);
+    }
+
+    /* ======================
+       CTA SECTION
+    ====================== */
+    .cta-section {
+      padding: clamp(100px, 10vw, 160px) clamp(24px, 4vw, 48px);
+      background: linear-gradient(135deg, #e2e2e2 0%, #e8e8e8 100%);
+      text-align: center;
+      position: relative;
+    }
+
+    .cta-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .cta-heading {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      color: var(--navy-blue);
+      margin-bottom: 30px;
+    }
+
+    .cta-text {
+      font-family: 'Figtree', sans-serif;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      line-height: 1.6;
+      color: var(--dark-blue-trans);
+      font-weight: 300;
+      margin-bottom: 50px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--navy-blue);
+      color: var(--light-grey);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 18px 40px;
+      border-radius: 30px;
+      transition: all 0.3s var(--transition-smooth);
+      border: 2px solid transparent;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      background: var(--dark-blue);
+      box-shadow: 0 15px 30px rgba(1, 50, 123, 0.2);
+      border-color: var(--light-grey-20);
+    }
+
+    .cta-button .arrow {
+      transition: transform 0.3s var(--transition-smooth);
+    }
+
+    .cta-button:hover .arrow {
+      transform: translateX(5px);
+    }
+
+    /* ======================
+       ANIMATION CLASSES
+    ====================== */
+    .visible {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    /* ======================
+       REVEAL ANIMATIONS
+    ====================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- Hero Section -->
+  <!-- <section class="hero-section">
+    <div class="hero-noise"></div>
+    <div class="hero-content">
+      <h1 class="main-heading" id="mainHeading">
+        <span class="heading-line">Construction Services</span>
+      </h1>
+      <p class="hero-subtext" id="heroSubtext">
+        From concept to completion, we deliver exceptional construction and maintenance solutions 
+        with precision, innovation, and uncompromising quality standards.
+      </p>
+    </div>
+  </section> -->
+
+  <!-- Services Grid -->
+  <section class="services-grid-section" id="services">
+    <div class="content-area">
+      <!-- HVAC SYSTEMS -->
+      <div id="hvac">
+        <h2 class="sub-title reveal">Air-Conditioning, Ventilation & Air Filtration Systems</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>Indoor comfort depends on systems that work silently, efficiently, and consistently. Our HVAC solutions are designed to deliver optimal climate control while maintaining healthy indoor air quality.</p>
+            <p>We develop HVAC systems that are intentional, efficient, and aligned with your architectural and environmental goals. Built to perform at every touchpoint.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/assets/outdoor kitchen.jpeg" alt="HVAC Installation">
+            <p class="caption">Commercial HVAC Installation</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/assets/Workstation design.jpeg" alt="Air Filtration System">
+            <p class="caption">Air Filtration System</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> PROJECT UNDERSTANDING</div>
+            <div class="acc-content">
+              <p>We analyze spatial layout, environmental conditions, usage patterns, and regulatory requirements.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> SYSTEM PLANNING</div>
+            <div class="acc-content">
+              <p>Cooling loads, ventilation strategies, filtration standards, and energy efficiency targets are defined.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> EXECUTION</div>
+            <div class="acc-content">
+              <p>Installation is carried out with precision, followed by testing, commissioning, and balancing.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> ONGOING SUPPORT</div>
+            <div class="acc-content">
+              <p>Preventive and corrective maintenance ensure long-term performance and reliability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ELECTROMECHANICAL -->
+      <div id="electrical">
+        <h2 class="sub-title reveal">Electromechanical Equipment Installation & Maintenance</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>Electromechanical systems form the operational core of modern buildings. Reliability, safety, and coordination are essential for uninterrupted operation.</p>
+            <p>We provide comprehensive installation and maintenance services that ensure seamless integration and long-term reliability of all electromechanical systems.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Control Panel Installation">
+            <p class="caption">Control Panel Installation</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Generator Maintenance">
+            <p class="caption">Generator Maintenance</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> SCOPE ASSESSMENT</div>
+            <div class="acc-content">
+              <p>We evaluate equipment requirements, power loads, and site conditions.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> TECHNICAL COORDINATION</div>
+            <div class="acc-content">
+              <p>Systems are planned to integrate seamlessly with architectural and MEP elements.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> INSTALLATION & INTEGRATION</div>
+            <div class="acc-content">
+              <p>All equipment is installed, tested, and commissioned according to standards.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> MAINTENANCE STRATEGY</div>
+            <div class="acc-content">
+              <p>Scheduled servicing and inspections ensure uninterrupted operation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLUMBING & SANITARY -->
+      <div id="plumbing">
+        <h2 class="sub-title reveal">Plumbing & Sanitary Contracting</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>Efficient water and waste systems are fundamental to building performance and hygiene. We deliver reliable solutions with strict quality control.</p>
+            <p>Our plumbing and sanitary systems are designed for durability, efficiency, and compliance with all health and safety standards.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Commercial Plumbing">
+            <p class="caption">Commercial Plumbing System</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Sanitary Installation">
+            <p class="caption">Sanitary Installation</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> SITE EVALUATION</div>
+            <div class="acc-content">
+              <p>We review water demand, pressure requirements, and drainage layouts.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> SYSTEM CONFIGURATION</div>
+            <div class="acc-content">
+              <p>Pipe routing, materials, and fixtures are selected for durability and efficiency.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> INSTALLATION</div>
+            <div class="acc-content">
+              <p>All plumbing and sanitary works are executed with strict quality control.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> TESTING & HANDOVER</div>
+            <div class="acc-content">
+              <p>Pressure testing and final inspections ensure reliable system delivery.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FLOOR & WALL TILING -->
+      <div id="tiling">
+        <h2 class="sub-title reveal">Floor & Wall Tiling Works</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>Tiling defines both the character and durability of a space. Our precision installation ensures perfect alignment and clean finishes.</p>
+            <p>We deliver tiling solutions that combine aesthetic appeal with functional performance, using quality materials and expert craftsmanship.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Floor Tiling">
+            <p class="caption">Commercial Floor Tiling</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Wall Tiling">
+            <p class="caption">Wall Tiling Installation</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> DESIGN REVIEW</div>
+            <div class="acc-content">
+              <p>We assess material selection, layout patterns, and functional use.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> SURFACE PREPARATION</div>
+            <div class="acc-content">
+              <p>Substrates are leveled and treated to ensure perfect alignment.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> INSTALLATION</div>
+            <div class="acc-content">
+              <p>Tiles are laid with precision, consistent spacing, and clean finishes.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> FINAL FINISH</div>
+            <div class="acc-content">
+              <p>Grouting, cleaning, and detailing complete the surface.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAINTING -->
+      <div id="painting">
+        <h2 class="sub-title reveal">Painting Contracting</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>Color and finish play a major role in shaping spatial experience. Professional techniques ensure smooth, uniform coverage and long-lasting results.</p>
+            <p>We provide painting services that enhance both aesthetics and durability, using premium materials and skilled application methods.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Interior Painting">
+            <p class="caption">Interior Painting</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Exterior Finishing">
+            <p class="caption">Exterior Finishing</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> SURFACE ASSESSMENT</div>
+            <div class="acc-content">
+              <p>We inspect substrates, lighting conditions, and environmental exposure.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> MATERIAL SELECTION</div>
+            <div class="acc-content">
+              <p>Paint systems and finishes are chosen for durability and aesthetics.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> APPLICATION</div>
+            <div class="acc-content">
+              <p>Professional techniques ensure smooth, uniform coverage.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> QUALITY CONTROL</div>
+            <div class="acc-content">
+              <p>Final inspection guarantees consistency and long-lasting results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARPENTRY & FLOORING -->
+      <div id="carpentry">
+        <h2 class="sub-title reveal">Carpentry & Floor Contracting</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>Custom craftsmanship adds warmth, structure, and function. Precision manufacturing and installation ensure refined execution.</p>
+            <p>Our carpentry and flooring solutions combine traditional craftsmanship with modern techniques to create spaces that are both beautiful and functional.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Custom Carpentry">
+            <p class="caption">Custom Carpentry Work</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Floor Installation">
+            <p class="caption">Floor Installation</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> REQUIREMENT ANALYSIS</div>
+            <div class="acc-content">
+              <p>We study space usage, design intent, and material preferences.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> DETAIL DEVELOPMENT</div>
+            <div class="acc-content">
+              <p>Joinery details and flooring layouts are finalized.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> FABRICATION & INSTALLATION</div>
+            <div class="acc-content">
+              <p>Precision manufacturing and installation ensure refined execution.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> FINISHING TOUCHES</div>
+            <div class="acc-content">
+              <p>Surface treatment and detailing complete the work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INSULATION -->
+      <div id="insulation">
+        <h2 class="sub-title reveal">Insulation Contracting</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>Insulation enhances comfort, efficiency, and acoustic performance. Systems are installed seamlessly within building structures.</p>
+            <p>Our insulation solutions optimize thermal and acoustic performance while maintaining structural integrity and energy efficiency.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Wall Insulation">
+            <p class="caption">Wall Insulation Installation</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Roof Insulation">
+            <p class="caption">Roof Insulation System</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> PERFORMANCE EVALUATION</div>
+            <div class="acc-content">
+              <p>Thermal and sound insulation needs are analyzed.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> SYSTEM SELECTION</div>
+            <div class="acc-content">
+              <p>Appropriate insulation materials and thickness are defined.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> INSTALLATION</div>
+            <div class="acc-content">
+              <p>Systems are installed seamlessly within building structures.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> VERIFICATION</div>
+            <div class="acc-content">
+              <p>Compliance and performance checks ensure effectiveness.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PARTITIONS & FALSE CEILINGS -->
+      <div id="partitions">
+        <h2 class="sub-title reveal">Partitions & False Ceilings Contracting</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>Modern interiors demand flexibility and clean spatial organization. Accurate alignment and finishing ensure a clean architectural look.</p>
+            <p>We create adaptable interior spaces with precision-crafted partitions and ceilings that integrate seamlessly with building services.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Office Partitions">
+            <p class="caption">Office Partition Installation</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="False Ceiling">
+            <p class="caption">False Ceiling System</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> LAYOUT PLANNING</div>
+            <div class="acc-content">
+              <p>We assess space division, ceiling heights, and service coordination.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> SYSTEM DEFINITION</div>
+            <div class="acc-content">
+              <p>Partition and ceiling types, materials, and ratings are finalized.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> INSTALLATION</div>
+            <div class="acc-content">
+              <p>Accurate alignment and finishing ensure a clean architectural look.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> INTEGRATION</div>
+            <div class="acc-content">
+              <p>Lighting, HVAC, and access panels are seamlessly incorporated.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PLASTER & CLADDING -->
+      <div id="plaster">
+        <h2 class="sub-title reveal">Plaster & Cladding Works</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>Surface treatment defines texture, depth, and protection. Execution ensures smooth finishes and precise detailing.</p>
+            <p>Our plaster and cladding services create protective and decorative surfaces that enhance both appearance and durability.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Plaster Finishing">
+            <p class="caption">Plaster Finishing Work</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Wall Cladding">
+            <p class="caption">Wall Cladding Installation</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> SURFACE REVIEW</div>
+            <div class="acc-content">
+              <p>We evaluate base conditions and exposure levels.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> MATERIAL STRATEGY</div>
+            <div class="acc-content">
+              <p>Plaster and cladding systems are selected for durability and design.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> APPLICATION</div>
+            <div class="acc-content">
+              <p>Execution ensures smooth finishes and precise detailing.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> FINAL INSPECTION</div>
+            <div class="acc-content">
+              <p>Surfaces are reviewed for consistency and quality.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CLEANING & LANDSCAPING -->
+      <div id="cleaning">
+        <h2 class="sub-title reveal">Building Cleaning Services & Grass Fix</h2>
+        
+        <div class="description-grid reveal">
+          <div class="text-block">
+            <p>The final stage transforms a site into a ready-to-use environment. Deep cleaning and grass installation are completed efficiently.</p>
+            <p>We provide comprehensive post-construction cleaning and landscaping services to ensure your space is presentation-ready and fully functional.</p>
+            <button class="view-all-btn">VIEW PROJECTS</button>
+          </div>
+        </div>
+
+        <div class="image-gallery reveal">
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Post-Construction Cleaning">
+            <p class="caption">Post-Construction Cleaning</p>
+          </div>
+          <div class="gallery-item">
+            <img src="/api/placeholder/600/400" alt="Landscaping Work">
+            <p class="caption">Landscaping & Grass Installation</p>
+          </div>
+        </div>
+
+        <div class="service-process reveal">
+          <div class="acc-item active">
+            <div class="acc-header"><span class="icon">×</span> SITE ASSESSMENT</div>
+            <div class="acc-content">
+              <p>We identify cleaning requirements and landscaping needs.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> SERVICE PLANNING</div>
+            <div class="acc-content">
+              <p>Cleaning methods and grass fixing solutions are defined.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> EXECUTION</div>
+            <div class="acc-content">
+              <p>Deep cleaning and grass installation are completed efficiently.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <div class="acc-header"><span class="icon">+</span> FINAL PRESENTATION</div>
+            <div class="acc-content">
+              <p>The site is handed over clean, refreshed, and complete.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- New Testimonials Section -->
+  <section class="new-testimonials-section">
+    <div class="new-testimonials-container">
+      <div class="header-grid">
+        <h1 class="title">Testimonials</h1>
+        <div class="intro-box">
+          <p>Hear! hear! what our clients have to say about our work and process. Some become good friends, while others introduce us to new ones. Remarkable journeys, completely devoid of any traces of Stockholm syndrome. Alrighty.</p>
+        </div>
+      </div>
+
+      <div class="scroll-wrapper" id="slider">
+        <div class="testimonial-item">
+          <div class="logo-container"><img src="https://logo.clearbit.com/clearstreet.io" alt="Clear Street"></div>
+          <p class="quote-text">"GrapsTech exceeded all expectations, effortlessly translating our vision into a stunning and functional construction that perfectly captures our needs. The team tackled every obstacle we presented."</p>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="logo-container"><img src="https://logo.clearbit.com/unilever.com" alt="Unilever"></div>
+          <p class="quote-text">"I needed a construction partner with technical expertise and strong project management capabilities. They were a perfect match for our corporation, one that we truly respect while we collaborate and work."</p>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="logo-container"><img src="https://logo.clearbit.com/nike.com" alt="Nike"></div>
+          <p class="quote-text">"The level of detail and craft they brought to our commercial project was astounding. Every aspect was thought through with a level of care we haven't seen in other construction firms before."</p>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="logo-container"><img src="https://logo.clearbit.com/apple.com" alt="Apple"></div>
+          <p class="quote-text">"Working with GrapsTech felt like an extension of our own team. They pushed our boundaries and delivered a project that didn't just meet the brief, but defined a whole new standard for us."</p>
+        </div>
+
+        <div class="testimonial-item">
+          <div class="logo-container"><img src="https://logo.clearbit.com/spotify.com" alt="Spotify"></div>
+          <p class="quote-text">"Resourcefulness and determination are understatements. They handled our complex construction requirements while maintaining a quality standard that is rarely seen in the industry today."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <h2 class="cta-heading">Ready to Build Your Vision?</h2>
+      <p class="cta-text">
+        Contact us today to discuss your project and discover how our expertise 
+        can bring your construction dreams to life with precision and excellence.
+      </p>
+      <a href="#" class="cta-button">
+        <span>Start Your Project</span>
+        <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero animations
+      gsap.to('#mainHeading', {
+        y: 0,
+        opacity: 1,
+        duration: 1.2,
+        ease: "power3.out",
+        delay: 0.3
+      });
+
+      gsap.to('#heroSubtext', {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power3.out",
+        delay: 0.6
+      });
+
+      // Reveal animations on scroll
+      const reveals = document.querySelectorAll('.reveal');
+      reveals.forEach(reveal => {
+        gsap.to(reveal, {
+          scrollTrigger: {
+            trigger: reveal,
+            start: 'top 85%',
+            toggleActions: 'play none none none'
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          ease: 'power3.out',
+          onComplete: function() {
+            reveal.classList.add('visible');
+          }
+        });
+      });
+
+      // Horizontal scroll for testimonials
+      const slider = document.getElementById('slider');
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+
+      slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        slider.style.cursor = 'grabbing';
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener('mouseleave', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+      });
+
+      slider.addEventListener('mouseup', () => {
+        isDown = false;
+        slider.style.cursor = 'grab';
+      });
+
+      slider.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      // Touch support for mobile
+      slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      });
+
+      slider.addEventListener('touchmove', (e) => {
+        e.preventDefault();
+        const x = e.touches[0].pageX - slider.offsetLeft;
+        const walk = (x - startX) * 1.2;
+        slider.scrollLeft = scrollLeft - walk;
+      });
+
+      // Accordion functionality
+      const accordions = document.querySelectorAll('.acc-header');
+      accordions.forEach(acc => {
+        acc.addEventListener('click', () => {
+          const item = acc.parentElement;
+          const isActive = item.classList.contains('active');
+          
+          // Close all accordions
+          document.querySelectorAll('.acc-item').forEach(el => {
+            el.classList.remove('active');
+          });
+          
+          // Open clicked one if it wasn't active
+          if (!isActive) {
+            item.classList.add('active');
+          }
+        });
+      });
+
+      // Add hover effects to testimonial items
+      const testimonialItems = document.querySelectorAll('.testimonial-item');
+      testimonialItems.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          item.style.cursor = 'pointer';
+        });
+        item.addEventListener('mouseleave', () => {
+          item.style.cursor = 'grab';
+        });
+      });
+
+      // Smooth scroll to services when clicking buttons (example)
+      const viewButtons = document.querySelectorAll('.view-all-btn');
+      viewButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+          e.preventDefault();
+          // You can add specific scroll functionality here
+          console.log('View projects clicked');
+        });
+      });
+    });
+  </script>
+</body>
+</html>
