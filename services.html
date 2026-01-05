@@ -105,7 +105,6 @@
       letter-spacing: -0.02em;
       color: var(--black-blue);
       margin-bottom: clamp(2rem, 4vw, 2.5rem);
-      opacity: 0;
       transform: translateY(60px);
     }
 
@@ -129,7 +128,6 @@
       color: var(--black-blue-80);
       max-width: 700px;
       margin: 0 auto clamp(2rem, 4vw, 3rem);
-      opacity: 0;
       transform: translateY(20px);
     }
 
@@ -336,7 +334,6 @@
       font-size: clamp(1rem, 1.5vw, 1.1rem);
       line-height: 1.6;
       color: var(--navy-blue);
-      opacity: 0.8;
     }
 
     .scroll-wrapper {
@@ -473,7 +470,6 @@
        REVEAL ANIMATIONS
     ====================== */
     .reveal {
-      opacity: 0;
       transform: translateY(30px);
       transition: opacity 0.8s var(--transition-smooth), transform 0.8s var(--transition-smooth);
     }
@@ -1063,7 +1059,7 @@
         Contact us today to discuss your project and discover how our expertise 
         can bring your construction dreams to life with precision and excellence.
       </p>
-      <a href="#" class="cta-button">
+      <a href="#" class="cta-button" class="inquiry-btn" id="footerInquiryBtn">
         <span>Start Your Project</span>
         <span class="arrow">→</span>
       </a>
@@ -1194,6 +1190,26 @@
         });
       });
     });
+    const footerInquiryBtn = document.getElementById('footerInquiryBtn');
+  if (footerInquiryBtn) {
+    console.log('Fixing footer inquiry button');
+    
+    const newFooterBtn = footerInquiryBtn.cloneNode(true);
+    footerInquiryBtn.parentNode.replaceChild(newFooterBtn, footerInquiryBtn);
+    
+    newFooterBtn.addEventListener('click', function(e) {
+      console.log('Footer Inquiry clicked');
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const phoneNumber = '+971505032497';
+      const message = 'Hello Graps Tech, I would like to inquire about your maintenance services in UAE.';
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsappURL, '_blank');
+    }, true);
+  }
   </script>
 </body>
 </html>
