@@ -13,6 +13,50 @@
     initAnimations();
   }
 })();
+// FIX FIXED INQUIRY BUTTON (WhatsApp)
+  const fixedInquiryBtn = document.getElementById('fixedInquiryBtn');
+  if (fixedInquiryBtn) {
+    console.log('Fixing fixed inquiry button');
+    
+    const newFixedBtn = fixedInquiryBtn.cloneNode(true);
+    fixedInquiryBtn.parentNode.replaceChild(newFixedBtn, fixedInquiryBtn);
+    
+    newFixedBtn.addEventListener('click', function(e) {
+      console.log('Fixed Inquiry clicked');
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const phoneNumber = '+971505032497';
+      const message = 'Hello Graps Tech, I would like to inquire about your maintenance services in UAE.';
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsappURL, '_blank');
+    }, true);
+  }
+  
+  // FIX FOOTER INQUIRY BUTTON (WhatsApp)
+  const footerInquiryBtn = document.getElementById('footerInquiryBtn');
+  if (footerInquiryBtn) {
+    console.log('Fixing footer inquiry button');
+    
+    const newFooterBtn = footerInquiryBtn.cloneNode(true);
+    footerInquiryBtn.parentNode.replaceChild(newFooterBtn, footerInquiryBtn);
+    
+    newFooterBtn.addEventListener('click', function(e) {
+      console.log('Footer Inquiry clicked');
+      e.preventDefault();
+      e.stopPropagation();
+      
+      const phoneNumber = '+971505032497';
+      const message = 'Hello Graps Tech, I would like to inquire about your maintenance services in UAE.';
+      const encodedMessage = encodeURIComponent(message);
+      const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+      
+      window.open(whatsappURL, '_blank');
+    }, true);
+  }
+
 // Smooth scrolling for navigation
 document.querySelectorAll('.center-pill a, .site-navigation a').forEach(link => {
   link.addEventListener('click', function (e) {
