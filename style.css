@@ -902,7 +902,7 @@ body {
     font-size: clamp(16px, 4vw, 18px);
     line-height: 1.4;
     font-weight: 200;
-    color: rgba(255, 255, 255, 0.8);
+  
   }
 
   .loading-line {
